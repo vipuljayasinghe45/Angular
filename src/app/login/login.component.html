@@ -1,0 +1,41 @@
+<form [formGroup]="loginform" (ngSubmit)="loginsubmited();">
+    <div class="row">
+        <div class="column">
+            <img src="assets\coffee-bar.jpg" height="720px" width="750px">
+        </div>
+
+        <div class="column" style="height: 500;">
+            <h2 style="position: relative;"> Login</h2>
+            <div style="padding: 120px 15px 54px 28px">
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="login_username" id="login_username"
+                    formControlName="login_username" required>
+                <div class="text-danger"
+                    *ngIf="(logindetails.login_username.touched && logindetails.login_username.errors)">
+                    Not Valid Username
+                </div>
+                        
+                </div>
+                <div class="mb-3">
+                    <input formControlName="login_password" name="login_password" type="password" class="form-control"
+                    id="login_password">
+                <div class="text-danger"
+                    *ngIf="(logindetails.login_password.touched && logindetails.login_password.errors)">
+                    Not Valid Password
+                </div>
+                </div>
+                <div class="mb-3">
+
+                    
+                    <button type="submit" class="btn btn-primary" id="exampleFormControlInput1"
+                        placeholder="name@example.com">Login</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <footer>
+            <p>© 2009 — 2022 abc.com® of Technology.</p>
+        </footer>
+    </div>
+</form>

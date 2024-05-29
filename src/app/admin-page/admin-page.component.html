@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <a type="button" href="" class="btn btn-primary" style="margin: 10px 20px 70px 10px;" data-toggle="modal"
+  data-target="#exampleModalCenter1" ng-disabled="all">Create Employee</a>
+  <a type="button" href="" class="btn btn-primary" style="margin: 10px 20px 70px 10px;" data-toggle="modal"
+  data-target="#exampleModalCenter2" ng-disabled="all">upload Items</a>
+
+
+
+<!-- Modal1 -->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="registermodel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registermodel">Employee Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-disabled="all">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #form="ngForm" #choos (ngSubmit)="onFormSubmit()">
+          <input type="text" class="form-control" placeholder="UserName" name="firstName" [(ngModel)]=model.firstName
+            ng-disabled="all">
+          <br>
+          <input type="text" class="form-control" placeholder="UserName" name="lastName" [(ngModel)]=model.lastName
+            ng-disabled="all">
+          <br>
+          <input type="text" class="form-control" placeholder="UserName" name="city" [(ngModel)]=model.city
+            ng-disabled="all">
+          <br>
+          <input type="text" class="form-control" placeholder="UserName" name="areaCode" [(ngModel)]=model.areaCode
+            ng-disabled="all">
+          <br>
+          <input type="text" class="form-control" placeholder="UserName" name="street" [(ngModel)]=model.street
+            ng-disabled="all">
+          <br>
+          <input type="text" class="form-control" placeholder="UserName" name="userName" [(ngModel)]=model.userName
+            ng-disabled="all">
+          <br>
+          <input type="password" class="form-control" placeholder="Password" name="passWord" [(ngModel)]=model.passWord
+            ng-disabled="all">
+          <br>
+          <label for="Permission">Choose Admin or Teacher or Student</label>
+          <br>
+          <!-- <div *ngIf="isAdmin1"> -->
+            <input type="text" list="permission" [(ngModel)]=model.isAdmin [ngModelOptions]="{standalone: true}" />
+            <datalist id="permission">
+              <option>Admin</option>
+              <option>Workers</option>
+              
+              
+            </datalist>
+          <!-- </div> -->
+         
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-disabled="all">Close</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="all">Save changes</button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- model 2 -->
+
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">UserName</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <th scope="row">{{employee.id}}</th>
+      <td>{{employee.userName}}</td>
+      <td>{{employee.passWord}}</td>
+      <td><a [routerLink]="['/usermanagment', employee.id]">View</a></td>
+      <td><a [routerLink]="['/usermanagment', employee.id]">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="updateUser()">
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="username name" name="username" id="username"
+                [(ngModel)]="employeedetail.userName" ng-disabled="all">
+        </div>
+        <br>
+       <div class="mb-3">
+        <input class="form-control" placeholder="password" id="password" name="password"  [(ngModel)]="employeedetail.passWord">
+       </div>
+       <br>
+    
+       <div class="mb3">
+        <input type="text" id="isAdmin" class="form-control" name="isAdmin" [(ngModel)]="employeedetail.isAdmin">
+       </div>
+       <br>
+    
+       <div class="mb3">
+        <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="employeedetail.firstName">
+       </div>
+       <br>
+    
+       <div class="mb3">
+        <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="employeedetail.lastName">
+       </div>
+       <br>
+    
+       <div class="mb3">
+        <input type="text" id="street" class="form-control" name="street" [(ngModel)]="employeedetail.street">
+       </div>
+       <br>
+    
+       <div class="mb3">
+        <input type="text" id="city" class="form-control" name="city" [(ngModel)]="employeedetail.city">
+       </div>
+       <br>
+    
+       <div class="mb3">
+        <input type="text" id="areaCode" class="form-control" name="areaCode" [(ngModel)]="employeedetail.areaCode">
+       </div>
+       <br>
+    
+       <button type="submit">Save</button>
+       <button type="button" (click)="deleteEmployeeID(employeedetail.id)">Delete</button>
+        
+       
+    </form>
+    
+</div>
